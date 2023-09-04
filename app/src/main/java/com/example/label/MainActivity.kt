@@ -87,11 +87,13 @@ class MainActivity : AppCompatActivity() {
         }
         binding.image.post {
             keyboardHeightProvider?.start()
+
+            binding.pizhucontainer.addPizhu(
+                (ViewUtils.getScreenWidth()/2- PizhuContainView.minPizhuWidth/2),
+                ViewUtils.dp2px(200f).toFloat()
+            )
         }
-        binding.pizhucontainer.addPizhu(
-            (ViewUtils.getScreenWidth()/2- PizhuContainView.minPizhuWidth/2),
-            ViewUtils.dp2px(200f).toFloat()
-        )
+
         binding.rvColor.apply {
             layoutManager = LinearLayoutManager(this@MainActivity, RecyclerView.HORIZONTAL,false)
             adapter = mColorAdapter
