@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fl_image_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tv_tips">
+
+        <ImageView
+            android:id="@+id/image"
+            android:src="@drawable/background"
+            android:scaleType="centerInside"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.example.label.view.PizhuContainView
+            android:id="@+id/pizhucontainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:text="点击图片任意区域添加文字"
+        android:layout_centerHorizontal="true"
+        android:textSize="12sp"
+        android:textColor="@color/color_999"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="76dp"/>
+
+    <FrameLayout
+        android:id="@+id/fl_bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="72dp">
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:text="下一步"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_round10_f7d"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_color"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:background="@color/color_f1f"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_color"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tv_color_sure"
+            android:text="完成"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</RelativeLayout>
